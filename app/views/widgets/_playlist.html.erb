@@ -1,0 +1,15 @@
+<div class="audio-player">
+  <h2 id="audio-title" data-ot="<%= audio.first.name %>" data-ot-style="dark"><%= audio.first.name %></h2>
+  <audio id="audio-player" preload="auto" tabindex="0" controls="controls" type="audio/mpeg">
+      <source type="audio/mpeg" src="<%= audio.first.local_path %>">
+      Sorry, your browser does not support HTML5 audio.
+  </audio>
+	<ul id="playlist">
+  	<% for i in 0...audio.size%>
+	  	<li class="<%= i==0 ? 'active' : '' %>">
+	  		<span class="audio-item-number"><%= "#{'0'*(i+1).to_s.size}#{i+1}. " %></span>
+	  		<a class="player-item" data-title="<%= audio[i].name %>" href="<%= audio[i].local_path %>"><%= audio[i].name %></a>
+	  	</li>
+	  <% end %>
+	</ul>
+</div><!-- @end .audio-player -->

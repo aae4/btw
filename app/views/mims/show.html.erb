@@ -1,0 +1,10 @@
+<div class="col-md-7 transparent-form">
+	<% if current_user == @mim.user %>
+		<div>
+			<%= link_to "Редактировать", edit_mim_path(@mim), :class => 'pull-right' %>
+		</div>
+	<% end %>
+	<div class="wmd-panel">
+		<%= raw @mim.description_html %>
+	</div>
+</div>

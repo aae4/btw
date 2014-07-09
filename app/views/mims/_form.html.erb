@@ -1,0 +1,37 @@
+<%= simple_form_for @mim do |f| %>
+
+
+  <div id="post-editor">
+  	<div class="col-md-4">
+  	</div>
+  	<div class="col-md-7 transparent-panel-form">
+  		<!--%= f.hidden_field :description_html %-->
+  		<textarea id="mim_description_html" name="mim[description_html]" style="display:none;"><%= raw f.object.description_html %></textarea>
+  		<%= f.submit "Создать", :class => "btn btn-success pull-right"%>
+  	</div>
+  	<div>
+	  	<div class="col-md-5">
+	  		<div class="col-md-12 transparent-form">
+		  		<div id="wmd-button-bar" class="wmd-panel"></div>
+	  			<textarea id="wmd-input" name="mim[description_markdown]" class="wmd-panel"><%= raw f.object.description_markdown %></textarea>
+	  			<br/>
+	  		</div>
+		  	<div class="col-md-12 transparent-form">
+		  		<div id="wmd-output" class="wmd-panel"></div>
+		  	</div>
+	  	</div>
+	  	<div class="col-md-6 transparent-form">
+	  		<div id="wmd-preview" class="wmd-panel"></div>
+	  	</div>
+	  </div>
+  </div>
+<% end %>
+
+<!--
+		<a href="http://cssglobe.com/lab/tooltip/02/1.jpg" class="markdown-img-preview"><img src="http://cssglobe.com/lab/tooltip/02/1s.jpg" alt="gallery thumbnail" /></a>
+			<ul>
+		<a href="http://cssglobe.com/lab/tooltip/02/2.jpg" class="markdown-img-preview"><img src="http://cssglobe.com/lab/tooltip/02/2s.jpg" alt="gallery thumbnail" /></a>
+		<a href="http://cssglobe.com/lab/tooltip/02/3.jpg" class="markdown-img-preview"><img src="http://cssglobe.com/lab/tooltip/02/3s.jpg" alt="gallery thumbnail" /></a>
+		<a href="http://cssglobe.com/lab/tooltip/02/4.jpg" class="markdown-img-preview"><img src="http://cssglobe.com/lab/tooltip/02/4s.jpg" alt="gallery thumbnail" /></a>
+	</ul>
+	-->

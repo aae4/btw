@@ -1,0 +1,2 @@
+module MimsHelper
+end
