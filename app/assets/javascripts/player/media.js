@@ -1,4 +1,8 @@
 $(document).ready(function () {
+	loadScript();
+});
+
+function loadScript(){
 	var audio;
 	var playlist;
 	var tracks;
@@ -19,7 +23,11 @@ $(document).ready(function () {
 	        e.preventDefault();
 	        /*update opentip and text*/
 	        $('#audio-title').html($(this).attr('data-title'));
-	        $('#audio-title').data('opentips')[0].setContent($(this).attr('data-title'))
+	        if ($('#audio-title').data('opentips') != undefined){
+	        	$('#audio-title').data('opentips')[0].setContent($(this).attr('data-title'))
+	        }else{
+	        	$("#audio-title").opentip($("#audio-title").attr('data-title'), { style: "dark" });
+	        }
 	        link = $(this);
 	        current = link.parent().index();
 	        run(link, audio[0]);
@@ -40,8 +48,10 @@ $(document).ready(function () {
     player.src = link.attr('href');
     /*update opentip*/
     $('#audio-title').html(link.attr('data-title'));
-    if (typeof $('#audio-title').data('opentips') != 'undefind'){
+    if ($('#audio-title').data('opentips') != undefined){
 	  	$('#audio-title').data('opentips')[0].setContent(link.attr('data-title'))
+	  }else{
+	   	$("#audio-title").opentip($("#audio-title").attr('data-title'), { style: "dark" });
 	  }
     par = link.parent();
     par.addClass('active').siblings().removeClass('active');
@@ -62,4 +72,4 @@ $(document).ready(function () {
 	  });
 	});
 
-});
+};

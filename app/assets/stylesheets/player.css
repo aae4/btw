@@ -1,4 +1,27 @@
 /** audio player styles **/
+
+.cut-off{
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.audio-player{
+  /*min-height: 400px;*/
+}
+
+.audio-search-input{
+  width: 350px;
+  height: 40px;
+  margin: 20px;
+}
+
+.playlist-div{
+  overflow:auto;
+  overflow-x: hidden;
+  height:300px;
+}
+
 .audio-player, .audio-player div, .audio-player h2, .audio-player a, .audio-player span, .audio-player button {
   margin: 0;
   padding: 0;
@@ -41,8 +64,8 @@
 div.audio-player {
   position: relative;
   width: 450px;
-  height: 70px;
-  margin: 0 auto;
+  /*height: 70px;*/
+  /*margin: 0 auto;*/
   background: #4c4e5a;
   background: -webkit-linear-gradient(top, #4c4e5a 0%, #2c2d33 100%);
   background: -moz-linear-gradient(top, #4c4e5a 0%, #2c2d33 100%);

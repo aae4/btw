@@ -1,7 +1,4 @@
 <div class="normalize-size transparent-form">
-	<%= @doc.to_html %>
-	<hr>
-
 	<% if @audio.count > 0 %>
 		<div class="col-md-5">
 			<%= render :partial => "widgets/playlist", :locals => {:audio => @audio} %>

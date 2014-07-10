@@ -1,0 +1,19 @@
+<div class="normalize-size transparent-form">
+  <div class="col-md-5">
+    <div class="inline">
+    	<label class="control-label" for="search">Поиск</label>
+      <%= form_tag mumirs_path, :method => :get,  "style"=>"display: inline;", :remote => true do %>
+        <%= text_field_tag :search, "", :class => "audio-search-input", :placeholder => "Начните вводить название песни" %>
+        <%= button_tag :type => :submit do %>
+          <i class="glyphicon glyphicon-search"></i>
+        <% end %> 
+      <% end %>
+    </div>
+
+		<div id="search-audio-table">
+			<% if @audio.size > 0 %>
+				<% render :partial => "table", :locals => {:audio => @audio} %>
+			<% end %>
+		</div>
+  </div>
+</div>
